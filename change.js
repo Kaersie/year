@@ -1,4 +1,4 @@
-(function () { 
+﻿(function () { 
     function resize() {
       var body = document.getElementsByTagName('body')[0];
       var html = document.getElementsByTagName('html')[0];
@@ -47,7 +47,7 @@ function showit(){
 }
 showit();
 async function showagain() {
-    const res = await fetch('https://cdn.jsdelivr.net/gh/Kaersie/year@debugs/data.json');
+    const res = await fetch('data.json');
     const data = await res.json();
     //   随机取出data的某一项
     const randomIndex = Math.floor(Math.random() * data.length);
