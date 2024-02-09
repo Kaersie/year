@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分享</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Kaersie/year@debugs/new.css">
+    <meta name="keywords" content="新年贺卡,2024,卡尔斯厄">
+    <meta name="description" content="Powered by 卡尔斯厄">
+    <meta name="author" content="卡尔斯厄">
+</head>
+<body>
+
+    <div style="position: relative;" class="main" >
+        <p class="first">分享链接：</p>
+        <p class="second" id="first" contenteditable="true"></p>
+        <p class="ss">Wishing You Prosperity and Health in the Year of the Dragon!</p>
+    </div>  
+    <ul style="float: center;">
+        <li  class="dock" id="dock1" style="color: white;font-size: 15px;" onclick='location.href = "../index.html";'>作者</li>   
+        <li class="dock" id="dock3" onclick='window.history.back()' style="color: white;font-size: 15px;">返回</li></ul>            
+    <br>
+    <script>
+    let name;
+    let i=1;
+        while(i==1){
+            name=prompt("请输入ta的名字");
+        if (name!=null&name!="") {
+            i=2;   
+        }else{alert("姓名不能为空");}
+        }
+    let x="https://kaersie.github.io/year?name="+encodeURI(name);  
+    let first=document.getElementById("first");
+    first.innerText=x;  
+    function v(){
+        console.log("version: 0.2.3");
+    }
+    
+    </script>
+</body>
+</html>
