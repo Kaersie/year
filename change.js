@@ -1,17 +1,4 @@
-﻿(function () { 
-    function resize() {
-      var body = document.getElementsByTagName('body')[0];
-      var html = document.getElementsByTagName('html')[0];
-      var width = html.clientWidth;
-      var height =  html.clientHeight;
-      var max = width > height ? width : height;
-      var min = width > height ? height : width;
-      body.style.width = max + "px";
-      body.style.height = min + "px";
-    }
-    resize();
-    window.addEventListener("resize", resize)
-  })();
+﻿
 
   function readname(){
     let url=location.search;
@@ -22,17 +9,16 @@
         str=url.substr(1);
         strs=str.split("&");
         name=decodeURIComponent(strs[0].replace("name=",""));
+        thing=decodeURIComponent(strs[1].replace("thing=",""));
     }
-    if (name==""| name==null){
-        i=1;
-        while(i==1){
-            name=prompt("怎么称呼您？");
-        if (name!=null&name!="") {
-            i=2;   
-        }else{alert("姓名不能为空");}
-        }
+    if (name==""| name==null|name==undefined){
+       window.location.href="./share.html";
     }
-    return name;
+    else if(thing==""|thing==null|name==undefined){
+        thing="期待有美好的事情发生"
+    }
+    let aa=[name,thing];
+    return aa;
 }
 
 
@@ -42,17 +28,9 @@ function showit(){
     console.log(first1);
     let a=readname();
     console.log(a);
-    first1.innerText="致 "+a+" :";
+    first1.innerText="致 "+a[0]+" :";
+    let b=document.getElementById("second");
+    b.innerText=a[1];
 
 }
 showit();
-async function showagain() {
-    const res = await fetch('data.json');
-    const data = await res.json();
-    //   随机取出data的某一项
-    const randomIndex = Math.floor(Math.random() * data.length);
-    const randomtext = data[randomIndex].text;
-      let b=document.getElementById("second");
-      b.innerText=randomtext;
-  }
-  showagain();

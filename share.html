@@ -1,41 +1,51 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html class="h">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分享</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="new.css">
+    <title>发祝福 Powered by 卡尔斯厄</title>
     <meta name="keywords" content="新年贺卡,2024,卡尔斯厄">
     <meta name="description" content="Powered by 卡尔斯厄">
     <meta name="author" content="卡尔斯厄">
 </head>
 <body>
 
-    <div style="position: relative;" class="main" >
-        <p class="first">分享链接：</p>
-        <p class="second" id="first" contenteditable="true"></p>
-        <p class="ss">Wishing You Prosperity and Health in the Year of the Dragon!</p>
+    <br><br>
+    <div class="main" style="margin: 10px;font-size: 30px;max-width: 80%;">
+        <p class="first" style="font-size: larger;">ta的名字:</p><p class="first" id="first" contenteditable="true" style="border-color: aliceblue;border-style:double;border-radius: 5px;margin: 5px;"></p>
+        <p class="second" style="font-size: larger;">祝福文案</p><p class="second" id="second" contenteditable="true" style="border-color: aliceblue;border-style:double;border-radius: 5px;margin: 5px;height: auto;max-height: 3em;overflow: scroll;"></p>
+        <button style="height: 30px;width: 50px;background-color: brown;color: aliceblue;border-radius: 5px;border-style: double;border-color: aliceblue;" onclick="get()" >确定</button>
+    <p id="third" class="first" contenteditable="true" style="border-color: aliceblue;border-style:double;border-radius: 5px;margin: 5px;font-size: large;max-height: 5em;overflow: scroll;" ></p>
     </div>  
-    <ul style="float: center;">
+    <ul style="position: fixed;top: 5px;">
         <li  class="dock" id="dock1" style="color: white;font-size: 15px;" onclick='location.href = "../index.html";'>作者</li>   
         <li class="dock" id="dock3" onclick='window.history.back()' style="color: white;font-size: 15px;">返回</li></ul>            
     <br>
     <script>
-    let name;
-    let i=1;
-        while(i==1){
-            name=prompt("请输入ta的名字");
-        if (name!=null&name!="") {
-            i=2;   
-        }else{alert("姓名不能为空");}
-        }
-    let x="https://kaersie.github.io/year?name="+encodeURI(name);  
-    let first=document.getElementById("first");
-    first.innerText=x;  
-    function v(){
-        console.log("version: 0.2.3");
+function copyToClip(content, message) {
+    var aux = document.createElement("input"); 
+    aux.setAttribute("value", content); 
+    document.body.appendChild(aux); 
+    aux.select();
+    document.execCommand("copy"); 
+    document.body.removeChild(aux);
+    alert(message);
+}
+    function get(){
+        let first=document.getElementById('first');
+        let second=document.getElementById('second');
+        let third=document.getElementById("third");
+        let name=first.innerText;
+        let thing=second.innerText;
+        third.innerText="https://kaersie.github.io/year?name="+encodeURI(name)+"&thing="+encodeURI(thing);
+        let e=document.getElementById("co");
+        let things=third.innerText;
+        copyToClip(things,"已复制到系统剪贴板");
+
+        return third.innerText;
+
     }
-    
     </script>
 </body>
 </html>
