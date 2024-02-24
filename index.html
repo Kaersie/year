@@ -1,62 +1,58 @@
-﻿<!DOCTYPE html>
+﻿ <!DOCTYPE html>
 <html id="screen-change" class="h">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="new.css">
-    <title>祝福小助手 Powered by 卡尔斯厄</title>
+    <title>新年快乐 Powered by 卡尔斯厄</title>
     <meta name="keywords" content="新年贺卡,2024,卡尔斯厄">
     <meta name="description" content="Powered by 卡尔斯厄">
     <meta name="author" content="卡尔斯厄">
 </head>
-
 <body>
     <style>
         @media screen and (orientation:portrait) {
-            /*竖屏样式*/
-            body {
-              transform-origin: 0 0;
-              transform: rotateZ(90deg) translateY(-100%);
-            }
-            .first,.second{
+    /*竖屏样式*/
+    body {
+      transform-origin: 0 0;
+      transform: rotateZ(90deg) translateY(-100%);
+    }
+    .first,.second{
         float: center;
-            }
-          }
-        
+    }
+  }
+
     </style>
 
     <br><br>
-    <div style="position: relative;" class="main">
+    <div style="position: relative;" class="main" >
         <p class="first" id="first" contenteditable="true"></p>
         <p class="second" id="second" contenteditable="true"></p>
         <p style="font-size: 1px;"><br></p>
-    </div>
-    <ul style="float: center;">
-        <li class="dock" id="dock1" style="color: white;font-size: 15px;" onclick='location.href = "../index.html";'>作者</li>
-        <li class="dock" id="dock3" onclick='location.href="share.html"' style="color: white;font-size: 15px;">发祝福</li>
-    </ul>
+    </div>  
+        <ul style="float: center;">
+        <li  class="dock" id="dock1" style="color: white;font-size: 15px;" onclick='location.href = "../index.html";'>作者</li>   
+        <li class="dock" id="dock3" onclick='location.href="share.html"' style="color: white;font-size: 15px;">发祝福</li></ul>            
     <br>
 
-
-    <script>
-        (function () { 
-        function resize() {
-          var body = document.getElementsByTagName('body')[0];
-          var html = document.getElementsByTagName('html')[0];
-          var width = html.clientWidth;
-          var height =  html.clientHeight;
-          var max = width > height ? width : height;
-          var min = width > height ? height : width;
-          body.style.width = max + "px";
-          body.style.height = min + "px";
-        }
-        resize();
-        window.addEventListener("resize", resize)
-          })();
-           console.log("version: 0.2.6");
-    </script>
-    <script src="change.js"></script>
+                
+<script>
+    (function () { 
+    function resize() {
+      var body = document.getElementsByTagName('body')[0];
+      var html = document.getElementsByTagName('html')[0];
+      var width = html.clientWidth;
+      var height =  html.clientHeight;
+      var max = width > height ? width : height;
+      var min = width > height ? height : width;
+      body.style.width = max + "px";
+      body.style.height = min + "px";
+    }
+    resize();
+    window.addEventListener("resize", resize)
+  })();
+   console.log("version: 0.2.6");
+</script>
+<script src="change.js"></script>
 </body>
-
 </html>
