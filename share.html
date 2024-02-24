@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html class="h">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,43 +10,48 @@
     <meta name="description" content="Powered by 卡尔斯厄">
     <meta name="author" content="卡尔斯厄">
 </head>
+
 <body>
 
     <br><br>
     <div class="main" style="margin: 10px;font-size: 30px;max-width: 80%;">
-        <p class="first" style="font-size: larger;">ta的名字:</p><p class="first" id="first" contenteditable="true" style="border-color: aliceblue;border-style:double;border-radius: 5px;margin: 5px;"></p>
-        <p class="second" style="font-size: larger;">祝福文案</p><p class="second" id="second" contenteditable="true" style="border-color: aliceblue;border-style:double;border-radius: 5px;margin: 5px;height: auto;max-height: 3em;overflow: scroll;"></p>
-        <button style="height: 30px;width: 50px;background-color: brown;color: aliceblue;border-radius: 5px;border-style: double;border-color: aliceblue;" onclick="get()" >确定</button>
-    <p id="third" class="first" contenteditable="true" style="border-color: aliceblue;border-style:double;border-radius: 5px;margin: 5px;font-size: large;max-height: 5em;overflow: scroll;" ></p>
-    </div>  
+        <p class="first" style="font-size: larger;">ta的名字:</p>
+        <p class="first" id="first" contenteditable="true" style="border-color: aliceblue;border-style:double;border-radius: 5px;margin: 5px;"></p>
+        <p class="second" style="font-size: larger;">祝福文案</p>
+        <p class="second" id="second" contenteditable="true" style="border-color: aliceblue;border-style:double;border-radius: 5px;margin: 5px;height: auto;max-height: 3em;overflow: scroll;"></p>
+        <button style="height: 50px;width: 80px;margin: 20px 10px 10px 10px;float: right;font-size: 20px;background-color: brown;color: aliceblue;border-radius: 5px;border-style: double;border-color: aliceblue;" onclick="get()">确定</button>
+        <p id="third" class="first" contenteditable="true" style="border-color: aliceblue;margin-top: 20px;border-style:double;border-radius: 5px;font-size: large;max-height: 5em;overflow: scroll;visibility: hidden;"></p>
+    </div>
     <ul style="position: fixed;top: 5px;">
-        <li  class="dock" id="dock1" style="color: white;font-size: 15px;" onclick='location.href = "../index.html";'>作者</li>   
-        <li class="dock" id="dock3" onclick='window.history.back()' style="color: white;font-size: 15px;">返回</li></ul>            
+        <li class="dock" id="dock1" style="color: white;font-size: 15px;" onclick='location.href = "../index.html";'>作者</li>
+        <li class="dock" id="dock3" onclick='window.history.back()' style="color: white;font-size: 15px;">返回</li>
+    </ul>
     <br>
     <script>
-function copyToClip(content, message) {
-    var aux = document.createElement("input"); 
-    aux.setAttribute("value", content); 
-    document.body.appendChild(aux); 
-    aux.select();
-    document.execCommand("copy"); 
-    document.body.removeChild(aux);
-    alert(message);
-}
-    function get(){
-        let first=document.getElementById('first');
-        let second=document.getElementById('second');
-        let third=document.getElementById("third");
-        let name=first.innerText;
-        let thing=second.innerText;
-        third.innerText="https://kaersie.github.io/year?name="+encodeURI(name)+"&thing="+encodeURI(thing);
-        let e=document.getElementById("co");
-        let things=third.innerText;
-        copyToClip(things,"已复制到系统剪贴板");
-
-        return third.innerText;
-
-    }
+        function copyToClip(content, message) {
+            var aux = document.createElement("input"); 
+            aux.setAttribute("value", content); 
+            document.body.appendChild(aux); 
+            aux.select();
+            document.execCommand("copy"); 
+            document.body.removeChild(aux);
+            alert(message);
+        }
+            function get(){
+                let first=document.getElementById('first');
+                let second=document.getElementById('second');
+                let third=document.getElementById("third");
+                let name=first.innerText;
+                let thing=second.innerText;
+                third.innerText="https://kaersie.github.io/year?name="+encodeURI(name)+"&thing="+encodeURI(thing);
+                let e=document.getElementById("co");
+                let things=third.innerText;
+                copyToClip(things,"已复制到系统剪贴板");
+                third.style.visibility='visible';
+                return third.innerText;
+        
+            }
     </script>
 </body>
+
 </html>
